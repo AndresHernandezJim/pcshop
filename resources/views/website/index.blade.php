@@ -30,8 +30,16 @@
                   <li>
                   	<img src="/img/SKU101724.jpeg" width="300px">
                   	<div class="caption left-align">
-                  		<h3><font color="747479">Equipos de marca</font></h3>
-                  		<h6><font color="747479"> Con las especificaciones que tu necesitas</font></h6>
+                  		<h3><font color="747479">Componentes de Audio</font></h3>
+                  		<h6><font color="747479"> Encuentra los mejores modelos de las mejores marcas de componentes de audio para disfrutar de tus juegos o música favorita</font></h6>
+                  	</div>
+                  </li>
+                  <li>
+                  	<img src="/img/RAM-Sandy.jpg" width="300px">
+                  	<div class="caption left-align">
+                  		<h3><font color="CB2020">Componentes para mejora</font></h3>
+                  		<h6><font color="D10D0D"> Encuentra componentes que ayudaran a mejorar las capacidades de tu PC <br>
+                  			* Memorias Ram <br> * Discos duros <br> * Tarjetas de video <br> * Y mucho más</font></h6>
                   	</div>
                   </li>
                 </ul>

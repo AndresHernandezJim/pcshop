@@ -11,7 +11,7 @@
 <body>
   <nav class=" blue darken-1">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">PcShop</a>
+      <a href="/" class="brand-logo center">PcShop</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="grey-text text-lighten-3" href="/tienda"><i class="fa fa-home" aria-hidden="true">  Tienda</i></a></li>
         <li><a class="grey-text text-lighten-3" href="/login"><i class="fa fa-sign-in" aria-hidden="true">  Ingresar</i></a></li>
@@ -22,6 +22,7 @@
   </nav>
 
   @yield('content')
+  @yield('archives')
   <footer class="page-footer  blue darken-1">
     <div class="container">
         <div class="row">

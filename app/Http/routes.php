@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/website/index');
-});
+Route::get('/', function () {return view('/website/index');});
+get('/login',function(){return view('/website/login');});
+get('/registro', function(){return view('/website/singup');});
+post('/registrar','loginController@store');
+post('/login2','loginController@index');
