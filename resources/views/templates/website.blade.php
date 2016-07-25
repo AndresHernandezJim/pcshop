@@ -15,11 +15,14 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="grey-text text-lighten-3" href="/tienda"><i class="fa fa-home" aria-hidden="true">  Tienda</i></a></li>
         <li><a class="grey-text text-lighten-3" href="/login"><i class="fa fa-sign-in" aria-hidden="true">  Ingresar</i></a></li>
-        <li><a class="grey-text text-lighten-3" href="/about"><i class="fa fa-info" aria-hidden="true">  Acerca</i></a></li>
+        <li><a class="grey-text text-lighten-3" href="/acerca"><i class="fa fa-info" aria-hidden="true">  Acerca</i></a></li>
         <li><a class="grey-text text-lighten-3" href="/contacto"><i class="fa fa-envelope" aria-hidden="true">  Contacto</i></a></li>
       </ul>
     </div>
   </nav>
+    <center>
+      <img src="/img/pcshop.png">
+    </center>
 
   @yield('content')
   @yield('archives')

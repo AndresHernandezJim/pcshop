@@ -11,7 +11,7 @@
  <center> 
   <div>
   	
-  	<img src="" style="width:700px height:400px">
+  	<img src="/img/pcshop.png" >
   </div>
 </center>
 <br>
