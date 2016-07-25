@@ -50,6 +50,38 @@ class loginController extends Controller
             
            
           return back()->with('error', true); //peromite declarar una variable de sesion flash
+        }elseif (Auth::attempt(['email' => $request->usuario, 'password' => $request->password])) {
+            //crea una variable de sesion de usuario
+            $usuario = Auth::user();
+               //dd("creo la sesion");
+                if(Auth::user()->tipo_usuario == 2){
+                    //return "eres admin";
+                    //dd("eres admin");
+                    $request->session()->put('usuario', $usuario);
+                    return "usr";
+                }else{
+                    return redirect('/');
+                   
+                }
+            
+           
+          return back()->with('error', true); //peromite declarar una variable de sesion flash
+        }elseif (Auth::attempt(['nick' => $request->usuario, 'password' => $request->password])) {
+            //crea una variable de sesion de usuario
+            $usuario = Auth::user();
+               //dd("creo la sesion");
+                if(Auth::user()->tipo_usuario == 2){
+                    //return "eres admin";
+                    //dd("eres admin");
+                    $request->session()->put('usuario', $usuario);
+                    return "usr";
+                }else{
+                    return redirect('/');
+                    
+                }
+            
+           
+          return back()->with('error', true); //peromite declarar una variable de sesion flash
         }
         //dd("no entro");
             
