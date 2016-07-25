@@ -18,8 +18,8 @@
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="input-field col s12">
-                                         <input name="usuario" id="email" type="text" class="validate">
-                                         <label for="email">Email o Nickname</label>
+                                         <input name="nick" type="text" class="validate">
+                                         <label for="email">Nickname</label>
                                     </div>
                                     </div>
                                     <div class="row">

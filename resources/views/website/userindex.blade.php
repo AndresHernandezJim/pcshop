@@ -1,4 +1,4 @@
-@extends('templates.website')
+@extends('templates.tmpuser')
 @section('content')
 <div>
 <br>
