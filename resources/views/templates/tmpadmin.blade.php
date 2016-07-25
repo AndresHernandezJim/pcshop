@@ -1,3 +1,4 @@
+<?php session_start() ?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,23 +10,26 @@
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
-  <nav class=" blue darken-1">
+  <nav class=" blue darken-4">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">PcShop</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a class="grey-text text-lighten-3" href="/tienda"><i class="fa fa-home" aria-hidden="true">  Tienda</i></a></li>
+        <li><a class="grey-text text-lighten-3" href="/login"><i class="fa fa-sign-in" aria-hidden="true">  Ingresar</i></a></li>
+        <li><a class="grey-text text-lighten-3" href="/about"><i class="fa fa-info" aria-hidden="true">  Acerca</i></a></li>
+        <li><a class="grey-text text-lighten-3" href="/contacto"><i class="fa fa-envelope" aria-hidden="true">  Contacto</i></a></li>
+         <li><a href="/logouta">ADMIN &nbsp{{session()->get('Admin')->nick}} &nbsp&nbsp<i class="fa fa-sign-out"></i>Cerrar Sesión</a></li> 
       </ul>
     </div>
   </nav>
 
   @yield('content')
-  <footer class="page-footer  blue darken-1">
+  @yield('archives')
+  <footer class="page-footer  blue darken-4">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text"><i class="fa fa-book fa-2x"></i>&nbsp Libreria</h5>
+                <h5 class="white-text"><i class="fa fa-laptop fa-2x"></i>&nbsp PcShop</h5>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Enlaces</h5>

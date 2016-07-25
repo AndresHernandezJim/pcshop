@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Crypt;
+use App\User;
 
 class loginController extends Controller
 {
@@ -16,53 +17,42 @@ class loginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function obtener(){
+            return User::all();
+        }
+
     public function index(Request $request)
     {
-         if (Auth::attempt(['email' => $request->usuario, 'password' => $request->password])) {
-            //crea una variable de sesion de usuario
-            $usuario = Auth::user();
-               //dd("creo la sesion");
-                if(Auth::user()->tipo_usuario == 1){
-                    //return "eres admin";
-                    //dd("eres admin");
-                    $request->session()->put('administrador', $usuario);
-                    return "Admin";
-                }else{
-                    return redirect('/');
-                   
+        
+        if (Auth::attempt(['nick' => $request->nick, 'password' => $request->password])){
+             //dd("no es genial!!");
+             $usuario = Auth::user();
+                //dd($usuario->all());
+                if($usuario->tipo_usuario == 1){
+                     //dd("el tipo es 1");
+                    $request->session()->put('Admin', $usuario);
+                    //dd(session()->get('Admin')->nick);
+                    return redirect('/admin');
                 }
-            
-           
-          return back()->with('error', true); //peromite declarar una variable de sesion flash
-        }elseif (Auth::attempt(['nick' => $request->usuario, 'password' => $request->password])) {
-            //crea una variable de sesion de usuario
-            $usuario = Auth::user();
-               //dd("creo la sesion");
-                if(Auth::user()->tipo_usuario == 1){
-                    //return "eres admin";
-                    //dd("eres admin");
-                    $request->session()->put('administrador', $usuario);
-                    return "Admin";
-                }else{
-                    return redirect('/');
-                    
+                if($usuario->tipo_usuario == 2){
+                    //dd("el tipo es 2");
+                    $request->session()->put('Cliente', $usuario);
+                    //dd(session()->get('Cliente')->nick);
+                    return redirect('/user');
                 }
-            
-           
-          return back()->with('error', true); //peromite declarar una variable de sesion flash
+    
+        return back()->with('error', true); 
         }
-        //dd("no entro");
-            
-            return back()->with('error', true); //peromite declarar una variable de sesion flash
+         return back()->with('error', true);
     }
+
+    
     
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request){
+        //dd($request->all());
         $contra=\Hash::make($request->password);
         $usuario=\DB::table('usuario')->insert([
                 'Nombre'=>$request->nombre,
@@ -71,7 +61,7 @@ class loginController extends Controller
                 'password'=>$contra,
                 'fecha_nac'=>$request->fecha_nac,
                 'created_at'=>DATE('Y-m-d H:i:s'),
-                'tipo_usuario'=>1
+                'tipo_usuario'=>2
             ]);
         return back()->with('exito',true);
         //DB(usuario);
@@ -83,61 +73,11 @@ class loginController extends Controller
                 'nick'=>  $request->nick,
                 'email'=>$request->email,
                 'password'=>$contra,
-                'tipo_usuario'=>2
+                'tipo_usuario'=>1
             ]);
         return back()->with('exito',true);
         //DB(usuario);
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
    
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+   
 }
