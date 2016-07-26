@@ -20,24 +20,31 @@ post('/login2','loginController@index');
 get('/user', 'UserController@index');
 get('/logoutc', 'UserController@logout');
 //RUTAS ADMIN
-get('/admin', 'AdminController@index');
+/*get('/admin', 'AdminController@index');
 get('/logouta', 'AdminController@logout');
 get('/acerca',function(){return view('website.acerca');});
 get('/administrador/categorias', function(){return view('admin.categorias');});
 get('/administrador/productos',function(){return view('admin.productos');});
 get('/administrador/ventas',function(){return view('admin.ventas');});
 get('/administrador/usuarios',function(){return view('admin.usuarios');});
-get('/administrador/mensajes',function(){return view('admin.mensajes');});
-/*Route::group(['middleware' => 'Admin'], function(){
+get('/administrador/mensajes',function(){return view('admin.mensajes');});*/
+
+Route::group(['middleware' => 'Admin'], function(){
 	get('/admin', 'AdminController@index');
 	get('/logouta', 'AdminController@logout');
+	get('/acerca',function(){return view('website.acerca');});
+	get('/administrador/categorias', function(){return view('admin.categorias');});
+	get('/administrador/productos',function(){return view('admin.productos');});
+	get('/administrador/ventas',function(){return view('admin.ventas');});
+	get('/administrador/usuarios',function(){return view('admin.usuarios');});
+	get('/administrador/mensajes',function(){return view('admin.mensajes');});
 	
-});*/
+});
 
-/*
+
 Route::group(['middleware' => 'Cliente'], function(){
 	get('/user', 'UserController@index');
 	get('/logoutc', 'UserController@logout');
 	
 });
-*/ 
+
