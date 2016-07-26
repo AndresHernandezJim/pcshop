@@ -16,6 +16,9 @@ get('/login',function(){return view('/website/login');});
 get('/registro', function(){return view('/website/singup');});
 post('/registrar','loginController@store');
 post('/login2','loginController@index');
+get('/contacto',function(){return view('website.contacto');});
+post('/mensajes', 'mensajeController@store');
+get('/term&cond', function(){return view('website.terms&cond');});
 //rutas de tipo usuario
 get('/user', 'UserController@index');
 get('/logoutc', 'UserController@logout');

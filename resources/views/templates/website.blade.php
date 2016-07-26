@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>PcShop</title>
 	<meta id="token"  name="token" value="{{ csrf_token() }}">
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/materialize.min.css">
+	<link rel="stylesheet" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
@@ -51,7 +51,7 @@
     </div>
   	</footer>
 	<script src="/js/jquery-2.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	<script src="/js/materialize.min.js"></script>
 	<script src="/js/app.js"></script>
    <script src="https://cdn.jsdelivr.net/vue/1.0.21/vue.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>

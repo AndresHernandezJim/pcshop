@@ -28,7 +28,7 @@
 	<div class="row">
 		<center>
 			<div>
-				<p align="justify">¿Quieres saber más?,consulta nuestra seccion <a href="">Términos y Condiciones de uso</a> </p>
+				<p align="justify">¿Quieres saber más?,consulta nuestra seccion <a href="/term&cond">Términos y Condiciones de uso</a> </p>
 			</div>
 		</center>
 	</div>

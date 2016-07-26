@@ -11,3 +11,8 @@
  <center> 
   <div>
 @stop
+@section('archives')
+<div class="row">
+	
+</div>
+@stop
