@@ -10,8 +10,8 @@
   </nav>
  <center> 
   <div>
-  	
-  	<img src="/img/pcshop.png" >
+    
+    <img src="/img/pcshop.png" >
   </div>
 </center>
 <br>
